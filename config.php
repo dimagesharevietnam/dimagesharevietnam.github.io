@@ -3,8 +3,8 @@
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Docs Starter Template',
-    'siteDescription' => 'Beautiful docs powered by Jigsaw',
+    'siteName' => 'Dimage Share Vietnam',
+    'siteDescription' => 'System Solution Group',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',
