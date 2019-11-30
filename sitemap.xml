@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
+  <loc>https://my-jigsaw-docs.com/favicon_64.png</loc>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
   <loc>https://my-jigsaw-docs.com/docs/customizing-your-site</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://my-jigsaw-docs.com/docs/getting-started</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://my-jigsaw-docs.com/docs/algolia-docsearch</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://my-jigsaw-docs.com/docs/custom-404-page</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://my-jigsaw-docs.com/docs/navigation</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://my-jigsaw-docs.com</loc>
-  <lastmod>2019-11-30T11:30:50+07:00</lastmod>
+  <lastmod>2019-11-30T12:46:19+07:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
