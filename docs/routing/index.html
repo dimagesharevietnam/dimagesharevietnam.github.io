@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Laravel routing">
+
+        <meta property="og:site_name" content="Dimage Share Vietnam"/>
+        <meta property="og:title" content="Routing | Dimage Share Vietnam"/>
+        <meta property="og:description" content="Laravel routing"/>
+        <meta property="og:url" content="https://my-jigsaw-docs.com/docs/routing"/>
+        <meta property="og:image" content="/assets/img/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="Dimage Share Vietnam">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title>Dimage Share Vietnam | Routing</title>
+
+        <link rel="home" href="https://my-jigsaw-docs.com">
+        <link rel="icon" href="/favicon_64.png">
+
+        
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=ffd27a57fd0c917f193d">
+
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="Dimage Share Vietnam home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/img/logo.png" alt="Dimage Share Vietnam logo" />
+
+                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">Dimage Share Vietnam</h1>
+                    </a>
+                </div>
+
+                <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+                                    </div>
+            </div>
+
+                <button class="flex justify-center items-center bg-blue-500 border border-blue-500 h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+        </header>
+
+        <main role="main" class="w-full flex-auto">
+            <section class="container max-w-8xl mx-auto px-6 md:px-8 py-4">
+    <div class="flex flex-col lg:flex-row">
+        <nav id="js-nav-menu" class="nav-menu hidden lg:block">
+            <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Basic Laravel</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/customizing-your-site"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.1, Cài đặt Laravel
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/navigation"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.2, Kiến trúc cơ bản
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/routing"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+        >
+            1.3, Routing
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/custom-404-page"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.4, Middleware
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.5, Controllers
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.6, Requests
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.7, Responses
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.8, Views
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.9, Services
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.10, Eloquent Models
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.11, Events &amp; Handlers
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.12, Console
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Laravel 6.0 LTS</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            Các điểm cần lưu ý của bản phát hành 6.0
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Official Packages</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.1, Horizon
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.1, Telescope
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Lumen</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/pending"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            So sánh giữa Lumen và Laravel
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+    </ul>
+        </nav>
+
+        <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
+            <h1>Routing</h1>
+<h2>1, Route</h2>
+<h3>1.1, Định nghĩa</h3>
+<p>Route định nghĩa là 1 tuyến đường, nó có vai trò là định hướng, chỉ đường cho yêu cầu 'request' của người dùng đi đến đâu.</p>
+<p>Ví dụ khi ta truy cập 1 trang web Dimagesharevn.com/index, thì route sẽ nhận được 1 yêu cầu url, và nó sẽ xử lí request đó đến Controller.</p>
+<h3>1.2, Vị trí của các file Route</h3>
+<p>Phần Routing được chia ra ở 2 file là:</p>
+<ul>
+<li>Một route cho web là routes/web.php</li>
+<li>Một route cho api là routes/api.php</li>
+</ul>
+<h3>1.3,  Các phương thức trong Route</h3>
+<p>Các method mà Route hỗ trợ là:</p>
+<ul>
+<li>Route::get($uri, $callback); //Sử dụng để lấy thông tin. Ví dụ</li>
+<li>Route::get('/user/personal', 'UserController@personal'); // dùng để lấy dữ liệu personal trả về các view, hiển thị dữ liệu.</li>
+<li>Route::post($uri, $callback); // Thường được sử dụng để tạo mới dữ liệu, cũng có thể dùng để sửa hay xóa dữ liệu. Ví dụ:</li>
+<li>Route::post('/admins/users/create' ,'UserController@store'); // Dùng để tạo dữ liệu 1 user.</li>
+<li>Route::put($uri, $callback); // Thường được dùng để cập nhập dữ liệu có sẵn</li>
+<li>Route::put('/users/edit', 'UserController@update'); Dùng để cập nhập các thông tin của user.</li>
+<li>Route::patch($uri, $callback); // Thường dùng để cập nhập một phần của dữ liệu. Ví dụ</li>
+<li>Route::patch('/users/edit', 'UserController@update');</li>
+<li>Route::delete($uri, $callback); // Phương thúc dùng để xóa. Ví dụ:</li>
+<li>Route::delete('/admins/users/{user}', 'UserController@destroy'); // Dùng để xóa 1 user</li>
+<li>Route::options($uri, $callback);// dùng để hỏi server xem phương thức nào được hộ trợ ở URI</li>
+<li>Route::options('items', 'ItemController@options'); // xem /items hỗ trợ các phương thức nào (get, post, put, delete, ...)</li>
+<li>Route::match($methods, $uri, $callback); // Dùng để kết hợp các phương thức. VÍ dụ</li>
+<li>Route::match(['GET', 'POST', 'PUT'], '/match', Controller@match); // Route này sẽ nhận request với 3 method là PUT, POST, GET</li>
+<li>Route::any($uri, $callback); // Có thể nhận với bất kì yêu cầu nào. VÍ dụ</li>
+<li>Route::any('/user', 'Usercontroller@any'); // Route này sẽ nhận mọi method</li>
+<li>Route::redirect('/here', '/there'); // định hướng đến một url khác thực hiện chuyển hướng đơn giản. Ví dụ</li>
+<li>Route::redirect('/user', '/home'); // tự chuyển hướng đến home</li>
+<li>Route::view('/here', 'nameView'); // định hướng đến 1 view. Ví dụ:</li>
+<li>Route::view('/user', 'user.index'); // truy cập vào địa chỉ ta nhận lại 1 view.</li>
+<li>Route::fallback(function () { ..... }); // khi có một yêu cầu thực hiện tên một route nào đó nhưng lại không tồn tại route đó hay không có giá trị trả về, thì khi đó ta nhận lại một thông báo 404. Và khi đó ta có thể sử dụng Route::fallback chức năng này sẽ ghi đè lên trang 404 mặc định và đưa ra phần bổ sung hay thông báo. Ví dụ:</li>
+<li>Route::fallback(function () {
+return 'Hm, Bạn đã gặp lỗi rồi ư?';
+}); // Khi bạn gọi đến route nào đó không tồn tại thì sẽ hiển thị 'Hm, Bạn đã gặp lỗi rồi ư?'.</li>
+</ul>
+<h2>2, Thông số Route</h2>
+<p>Trên các url có thể kèm theo các thông số kèm theo
+Ví dụ trong url có kèm theo thông só id của user:
+Route::get('user/{id}', 'UserController@index');</p>
+<h3>2.1, Ràng buộc các tham số</h3>
+<p>Chúng ta có thể hạn chế định dạng của các tham số trong url bằng cách sử dụng where.</p>
+<ul>
+<li>Route::get('user/{name}', 'UserController@index')-&gt;where('name', '[A-Za-z]+');
+yêu cầu {name} bắt buộc là các chữ cái, nó sẽ không nhận định dạng khác</li>
+<li>Route::get('user/{id}', 'UserController@index')-&gt;where('id', '[0-9]+');
+Yêu cầu {id} bắt buộc phải là các số, không chấp nhận các kí tự chữ.</li>
+</ul>
+<h2>3, Đặt tên Routes</h2>
+<h3>3.1, Cú pháp</h3>
+<p>Các route có thể được đặt tên để có thể chuyển hướng một cách dễ dàng
+Route::get('user/profile', 'UserController@profile')-&gt;name('profile');</p>
+<h2>4, Nhóm các Route</h2>
+<p>Khi ta thấy các route có các thể nhóm lại để có thể xử lí hay yêu cầu chung thì ta có thể sử dụng Route::group</p>
+<h3>4.1, Namespaces</h3>
+<p>Ta có thể đặt Namespaces cho group:
+Route::group(['namespace' =&gt; 'User'], function () {
+... route
+});</p>
+<h3>4.2, Sub-Domain Routing</h3>
+<p>Các nhóm có thể sử dụng tên miền phụ, tên miền phụ cũng có thể có tham số như URL, tên miền phụ chỉ có cách chỉ định bằng cách gọi domain trước khi xác định nhóm:
+Route::domain('{account}.myapp.com')-&gt;group(function () {
+Route::get('user/{id}', function ($account, $id) {
+//
+});
+});</p>
+<h3>4.3, Prefix</h3>
+<p>Prefix để đăng kí các tiền tố trong nhóm Url. Ví dụ muốn tiền tố tất cả route trong nhóm.
+Route::prefix('admin')-&gt;group(function () {
+Route::get('users', function () {
+// Url sẽ là &quot;/admin/users&quot;
+});
+});</p>
+<h3>4.4, Route Name Prefixes</h3>
+<p>Ta muốn đăng kí tiền tố cho tên 'Ở phần 3' của route trong group. Ví dụ:
+Route::name('admin.')-&gt;group(function () {
+Route::get('users', function () {
+})-&gt;name('users'); // name của route sẽ là admin.users
+});</p>
+<h2>5, Route model binding</h2>
+<p>Khi injecting id của một model nào đó thì bạn sẽ phải lấy id đó rồi truy vấn ra các thông tin khác. Vậy laravel giúp bạn thay vì injecting id, bạn có thể injecting toàn bộ thông tin của chủ thể id đó.</p>
+<h3>5.1, Implicit Binding</h3>
+<p>Laravel đã giúp bạn có truyền theo toàn bộ thông tin thay vì mỗi id của thông tin đó. Ví dụ
+Thay vì
+Route::get('api/users/{id}', 'UserController@index');
+Thì ta có thể truyền
+Route::get('api/users/{user}', 'UserController@index');
+Có thể truyền theo cả 1 user và đây chứa được toàn bộ thông tin có thể là tên, tuổi, ...</p>
+<h2>6, Fallback Routes</h2>
+<p>Có thể sử dụng Route:fallback, khi có một yêu cầu thực hiện tên một route nào đó nhưng lại không tồn tại route đó hay không có giá trị trả về, thì khi đó ta nhận lại một thông báo 404. Và khi đó ta có thể sử dụng Route::fallback chức năng này sẽ ghi đè lên trang 404 mặc định và đưa ra phần bổ sung hay thông báo</p>
+<h2>7, Form Method Spoofing</h2>
+<p>Html không hỗ trợ các phương thức PUT, PATCH, DELETE. Do đó ta phải sử dụng _method trong form. Ví dụ
+&lt; form action=&quot;/foo/bar&quot; method=&quot;POST&quot;&gt;
+&lt; input type=&quot;hidden&quot; name=&quot;_method&quot; value=&quot;PUT&quot;&gt;
+&lt; input type=&quot;hidden&quot; name=&quot;_token&quot; value=&quot;{{ csrf_token() }}&quot;&gt;
+&lt; /form&gt;</p>
+<h2>8, Các lỗi hay gặp</h2>
+<ul>
+<li>Khi sử dụng thông số truyền theo url, nếu không đặt điều kiện hay ưu tiên đặt xuống phía cuối của Group có thể gây ra cho ứng dụng không xác định được sẽ gọi đến route nào. Ví dụ:</li>
+<li>Khi ta có sử dụng: Route::get('/User/{id}', 'UserController@show');(1)</li>
+<li>Và có một route khác: Route::get('/User/Update', 'UserController@update'); (2)
+Thì nếu để (2) như vậy thì ứng dụng sẽ sai xót là gọi từ trên xuống và nhảy đến thằng (1).
+Vì vậy ta có 2 cách để giải quyết là
+Route::get('/User/{id}', 'UserController@show')-&gt;where('id', '[0-9]+'); //Thêm điều kiện của thông số
+Đặt route số (2) lên trước route số (1)</li>
+</ul>        </div>
+    </div>
+</section>
+        </main>
+
+        <script src="/assets/build/js/main.js?id=5dd822863934b75738db"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center">
+                <li class="md:mr-2">
+                    &copy; <a href="https://www.dimage.co.jp/vn/" title="Dimage Share Vietnam Website">Dimage Share Vietnam Co.,Ltd</a> 2019.
+                </li>
+
+                <li>
+                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
+                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
