@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Customizing your Jigsaw docs site">
+        <meta name="description" content="Middlewares">
 
         <meta property="og:site_name" content="Dimage Share Vietnam"/>
-        <meta property="og:title" content="Customizing Your Site | Dimage Share Vietnam"/>
-        <meta property="og:description" content="Customizing your Jigsaw docs site"/>
-        <meta property="og:url" content="https://my-jigsaw-docs.com/docs/customizing-your-site"/>
+        <meta property="og:title" content="Middlewares | Dimage Share Vietnam"/>
+        <meta property="og:description" content="Middlewares"/>
+        <meta property="og:url" content="https://my-jigsaw-docs.com/docs/middlewares"/>
         <meta property="og:image" content="/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
 
@@ -17,7 +17,7 @@
         <meta name="twitter:card" content="summary_large_image">
 
         
-        <title>Dimage Share Vietnam | Customizing Your Site</title>
+        <title>Dimage Share Vietnam | Middlewares</title>
 
         <link rel="home" href="https://my-jigsaw-docs.com">
         <link rel="icon" href="/favicon_64.png">
@@ -147,7 +147,7 @@
             <li class="pl-4">
             
         <a href="/docs/middlewares"
-            class="lvl1   nav-menu__item hover:text-blue-500"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
         >
             3.2, Middlewares
         </a>
@@ -291,53 +291,86 @@
         </nav>
 
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
-            <h1 id="customizing">Customizing Your Site</h1>
-<h2>Styles</h2>
-<p>This starter template comes pre-loaded with <a href="https://tailwindcss.com">Tailwind CSS</a>, a utility CSS framework that allows you to customize and build complex designs without touching a line of CSS. There are also a few base Sass files in the <code>/source/_assets/sass</code> folder, set up with the expectation that you can add any custom CSS into <code>_documentation.scss</code>.</p>
-<blockquote>
-<p>You can re-work the architecture of the Sass includes any way you’d like; just make sure to keep the <code>@tailwind</code> references in your final files.</p>
-</blockquote>
-<pre><code class="language-scss">// source/_assets/sass/main.scss
-
-@tailwind preflight;
-@tailwind components;
-
-// Code syntax highlighting,
-// powered by https://highlightjs.org
-@import '~highlight.js/styles/a11y-light.css';
-
-@import 'base';
-@import 'navigation';
-@import 'documentation';
-
-@tailwind utilities;</code></pre>
-<hr />
-<h2 id="customizing-typography">Typography Styles</h2>
-<p>Here’s a quick preview of what some of the basic type styles will look like in this starter template:</p>
-<div class="example pt-6">
-<h1>h1 Heading</h1>
-<h2>h2 Heading</h2>
-<h3>h3 Heading</h3>
-<h4>h4 Heading</h4>
-<h5>h5 Heading</h5>
-<h6>h6 Heading</h6>
-<p>The quick brown fox jumps over the lazy dog</p>
-<p><s>The quick brown fox jumps over the lazy dog</s></p>
-<p><u>The quick brown fox jumps over the lazy dog</u></p>
-<p><em>The quick brown fox jumps over the lazy dog</em></p>
-<p><strong>The quick brown fox jumps over the lazy dog</strong></p>
-<p><code>The quick brown fox jumps over the lazy dog</code></p>
-<p><small>The quick brown fox jumps over the lazy dog</small></p>
-<p>&gt; The quick brown fox jumps over the lazy dog</p>
-<p><a href="#">The quick brown fox jumps over the lazy dog</a></p>
-<pre><code class="language-php">class Foo extends bar
+            <h1>Middleware trong Laravel</h1>
+<h2>Tổng quan</h2>
+<ul>
+<li>Giới thiệu</li>
+<li>Cách đăng ký</li>
+<li>Cách dùng</li>
+</ul>
+<h2>1, Giới thiệu</h2>
+<p><code>Middleware</code> nói chung là 1 cơ chế  trung gian nằm giữa các request và response. Nó nhận các request, thi hành các mệnh lệnh tương ứng trên request đó. Sau khi hoàn thành nó response (trả về) hoặc chuyển kết quả ủy thác cho một Middleware khác trong hàng đợi.</p>
+<p>Trong <strong>Laravel</strong>, Middleware cung cấp một giải pháp khá tiện ích cho việc lọc các HTTP requests vào ứng dụng của chúng ta.
+Ví dụ, với bản Laravel mặc định, ta có thể được cung cấp middleware liên quan đến xác thực người dùng. Nếu người dùng chưa được xác thực, Laravel sẽ chuyển hướng người dùng đến trang đăng nhập và ngược lại</p>
+<p>Trong cách viết bình thường của Middleware chúng ta sẽ thấy có $request và $next được truyền vào trong function handle. Bên cạnh đó ta hoàn toàn có thể truyền thêm biến.</p>
+<p>Ta cũng có thể thực hiện các lệnh trước hoặc sau $next để đảm bảo được mục đích</p>
+<pre><code class="language-php">public function handle($request, Closure $next)
 {
-    public function fooBar()
-    {
-        //
-    }
+
+    //do something first
+    $returnValue = $next($request);
+    //do something later
+
+    return $returnValue;
 }</code></pre>
-</div>        </div>
+<h2>2, Cách đăng ký</h2>
+<p>Ta có thể gõ lệnh</p>
+<pre><code class="language-bash">php artisan make:middleware</code></pre>
+<p>Hoặc đơn giản là thêm vào  trong thư mục <code>app/Http/Middleware</code></p>
+<h2>3, Cách dùng</h2>
+<p>Chúng ta chỉ nên dùng middleware cho 3 trường hợp sau:</p>
+<h5>Dùng middleware global</h5>
+<p>Chúng ta sẽ khai báo các middleware global trong <strong>app/Http/Kernel.php</strong></p>
+<pre><code class="language-php">protected $routeMiddleware = [
+    'auth' =&gt; \App\Http\Middleware\Authenticate::class,
+    'auth.basic' =&gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+    'bindings' =&gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    'cache.headers' =&gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
+    'can' =&gt; \Illuminate\Auth\Middleware\Authorize::class,
+    'guest' =&gt; \App\Http\Middleware\RedirectIfAuthenticated::class,
+    'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+    'throttle' =&gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
+    'verified' =&gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+];</code></pre>
+<p>Các middleware được khai báo trên đây sẽ được dùng cho mọi nơi ở ứng dụng</p>
+<h5>Dùng middleware cho các nhóm người dùng khác nhau</h5>
+<p>Bằng việc tạo thêm các nhóm người dùng qua việc chia route và định nghĩa trong <strong>RouteServiceProvider</strong>, ta có thể chỉ định các nhóm người dùng nào sẽ được áp dụng các middleware nào. Chúng ta sẽ khai báo các middleware theo nhóm trong mảng <code>$middlewareGroups</code></p>
+<p>Ví dụ</p>
+<pre><code class="language-php"> protected $middlewareGroups = [
+        'web' =&gt; [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \App\Http\Middleware\CheckForMaintenanceMode::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+
+        'admin' =&gt; [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]
+    ];</code></pre>
+<h5>Dùng middleware cục bộ ngay trong các controller</h5>
+<p>Để đảm bảo việc middleware chỉ cần được thực thi ở 1 số nơi nhất định như là trước mỗi controller. ta hoàn toàn có thể sử dụng tại <strong>function __contruct()</strong></p>
+<p>Ví dụ</p>
+<pre><code class="language-php">class Controller extends AppController
+{
+    /**
+     * Use middlewares
+     */
+    public function __construct()
+    {
+        $this-&gt;middleware(['auth:admin']);
+    }
+}</code></pre>        </div>
     </div>
 </section>
         </main>

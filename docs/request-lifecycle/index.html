@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Vòng đời của một request">
+
+        <meta property="og:site_name" content="Dimage Share Vietnam"/>
+        <meta property="og:title" content="Request Lifecycle | Dimage Share Vietnam"/>
+        <meta property="og:description" content="Vòng đời của một request"/>
+        <meta property="og:url" content="https://my-jigsaw-docs.com/docs/request-lifecycle"/>
+        <meta property="og:image" content="/assets/img/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="Dimage Share Vietnam">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title>Dimage Share Vietnam | Request Lifecycle</title>
+
+        <link rel="home" href="https://my-jigsaw-docs.com">
+        <link rel="icon" href="/favicon_64.png">
+
+        
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=ffd27a57fd0c917f193d">
+
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="flex items-center">
+                    <a href="/" title="Dimage Share Vietnam home" class="inline-flex items-center">
+                        <img class="h-8 md:h-10 mr-3" src="/assets/img/logo.png" alt="Dimage Share Vietnam logo" />
+
+                        <h1 class="text-lg md:text-2xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">Dimage Share Vietnam</h1>
+                    </a>
+                </div>
+
+                <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+                                    </div>
+            </div>
+
+                <button class="flex justify-center items-center bg-blue-500 border border-blue-500 h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+        </header>
+
+        <main role="main" class="w-full flex-auto">
+            <section class="container max-w-8xl mx-auto px-6 md:px-8 py-4">
+    <div class="flex flex-col lg:flex-row">
+        <nav id="js-nav-menu" class="nav-menu hidden lg:block">
+            <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Cài đặt Laravel</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/xampp-installation"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.1, XAMPP
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.2, Vagrant / Homestead
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            1.3, Docker
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Kiến trúc cơ bản</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/request-lifecycle"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+        >
+            2.1, Request lifecycle
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            2.2, Service Provider
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Basic Laravel</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/docs/routing"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.1, Routing
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/middlewares"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.2, Middlewares
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/docs/controllers"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.3, Controllers
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.4, Requests
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.5, Responses
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.6, Views
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.7, Services
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.8, Eloquent Models
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.9, Events &amp; Handlers
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            3.10, Console
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Laravel 6.0 LTS</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            4.1, Các điểm cần lưu ý của bản phát hành 6.0
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Official Packages</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            5.1, Horizon
+        </a>
+    
+    </li>
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            5.1, Telescope
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+            <li class="pl-4">
+            
+        <p class="nav-menu__item text-gray-600">Lumen</p>
+    
+            
+        <ul class="my-0 list-none list-inside pr-8">
+            <li class="pl-4">
+            
+        <a href="/#"
+            class="lvl1   nav-menu__item hover:text-blue-500"
+        >
+            6.1, So sánh giữa Lumen và Laravel
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+    </ul>
+        </nav>
+
+        <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
+            <h1>Request Lifecycle</h1>
+<p>Bài viết này sẽ trình bày về vòng đời của một request (cụ thể hơn là xử lý một HTTP Request) trong ứng dụng web được xây dựng dựa trên framework Laravel</p>
+<p><img src="/assets/images/request_lifecycle.png" alt="laravel request lifecycle" /></p>
+<h2>Điểm tiếp nhận</h2>
+<p>Điểm tiếp nhận của mọi request tới Laravel đều được xử lý ở file <code>public/index.php</code>. Tất cả các request đều được web server (Apache, Nginx) chuyển tiếp đến đây. Thực tế thì mọi xử lý của Laravel cũng đều diễn ra duy nhất ở file này. Chúng ta cùng phân tích cụ thể các đoạn code được viết trong file này.</p>
+<h2>Nạp các thư viện cần thiết</h2>
+<pre><code class="language-php">/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+*/
+
+require __DIR__.'/../vendor/autoload.php';</code></pre>
+<blockquote>
+<p>Việc nạp này được xử lý với sự giúp đỡ của <a href="https://getcomposer.org/">composer</a>. Vì vậy một cách đơn giản hơn để biết được ứng dụng yêu cầu những thư viện cần thiết nào là đọc nội dung của file <code>composer.json</code> nằm folder source code.</p>
+</blockquote>
+<h2>Tạo application instance</h2>
+<pre><code>/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+*/
+
+$app = require_once __DIR__.'/../bootstrap/app.php';</code></pre>
+<p>Tiếp theo Laravel sẽ tạo ra một application instance từ file <code>boostrap/app.php</code>. Chúng ta cụ thể xem file này thực hiện những nhiệm vụ gì.</p>
+<h2>Khai báo các thành phần quan trọng</h2>
+<p>Việc đầu tiên mà file <code>bootstrap/app.php</code> xử lý là tạo application instance:</p>
+<pre><code class="language-php">/*
+|--------------------------------------------------------------------------
+| Create The Application
+|--------------------------------------------------------------------------
+*/
+
+$app = new Illuminate\Foundation\Application(
+    realpath(__DIR__.'/../')
+);</code></pre>
+<p>Tiếp theo, file <code>bootstrap/app.php</code> sẽ khai báo các thành phần quan trọng, thực chất các thành phần này là những hạt nhân <code>kernel</code>của ứng dụng, bao gồm:</p>
+<h5>Nhân ứng dụng HTTP (Http Kernel):</h5>
+<pre><code class="language-php">$app-&gt;singleton(
+    Illuminate\Contracts\Http\Kernel::class,
+    App\Http\Kernel::class
+);</code></pre>
+<p>Thực tế, khai báo này binding interface <code>Http\Kernel</code> với file <code>app/Http/Kernel.php</code> trong source code. Cụ thể 2 thành phần quan trọng nhất cần quan tâm là:</p>
+<p><strong>Khai báo bootstrappers trong <code>Illuminate/Foundation/Http/Kernel.php</code></strong></p>
+<pre><code class="language-php">/**
+ * The bootstrap classes for the application.
+ *
+ * @var array
+ */
+protected $bootstrappers = [
+    \Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables::class,
+    \Illuminate\Foundation\Bootstrap\LoadConfiguration::class,
+    \Illuminate\Foundation\Bootstrap\HandleExceptions::class,
+    \Illuminate\Foundation\Bootstrap\RegisterFacades::class,
+    \Illuminate\Foundation\Bootstrap\RegisterProviders::class,
+    \Illuminate\Foundation\Bootstrap\BootProviders::class,
+];</code></pre>
+<p>Đây là những class sẽ được thực thi trong quá trình khởi động application</p>
+<p>**Khai báo middlewares trong <code>app\Http\Kernel.php</code></p>
+<pre><code class="language-php"> /**
+ ¦* The application's global HTTP middleware stack.
+ ¦*
+ ¦* These middleware are run during every request to your application.
+ ¦*
+ ¦* @var array
+ ¦*/
+ protected $middleware = [...];</code></pre>
+<p>Đây là những global middleware, tức là những middleware sẽ được chạy qua tất cả các request</p>
+<pre><code class="language-php"> /**
+ ¦* The application's route middleware groups.
+ ¦*
+ ¦* @var array
+ ¦*/
+ protected $middlewareGroups = [...];</code></pre>
+<p>Đây là những group middleware, được chỉ định cho những route-group cụ thể.</p>
+<pre><code class="language-php"> /**
+ ¦* The application's route middleware.
+ ¦*
+ ¦* These middleware may be assigned to groups or used individually.
+ ¦*
+ ¦* @var array
+ ¦*/
+ protected $routeMiddleware = [...];</code></pre>
+<p>Đây là những middleware lẻ, được chỉ định cho những route cụ thể.</p>
+<h5>Nhân ứng dụng Console (Console Kernel)</h5>
+<p><em>Laravel coi Console là một ứng dụng độc lập với ứng dụng HTTP</em></p>
+<pre><code class="language-php">$app-&gt;singleton(
+    Illuminate\Contracts\Console\Kernel::class,
+    App\Console\Kernel::class
+);</code></pre>
+<p>Tạm thời chúng ta bỏ qua tìm hiểu Kernel này và sẽ nhắc lại trong một bài viết khác.</p>
+<h5>Bộ xử lý ngoại lệ (Exception Handler)</h5>
+<pre><code class="language-php">$app-&gt;singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    App\Exceptions\Handler::class
+);
+</code></pre>
+<p>Ở phần này chúng ta cần chú ý nhất 2 xử lý:</p>
+<ul>
+<li><code>report(Exception $e)</code> Viết thông tin exception ra các file log</li>
+<li><code>render($request, Exception $e)</code> Tạo response trong các trường hợp ngoại lệ (ví dụ hiển thị màn hình 404, hiển thị lỗi validation, ...)</li>
+</ul>
+<p>Cuối cùng application instance được trả về cho file <code>public/index.php</code></p>
+<pre><code class="language-php">/*
+|--------------------------------------------------------------------------
+| Return The Application
+|--------------------------------------------------------------------------
+*/
+
+return $app;</code></pre>
+<h2>Xử lý request</h2>
+<p>Đoạn code nằm trong file <code>public/index.php</code> này rất ngắn nhưng bao hàm toàn bộ xử lý logic của Laravel:</p>
+<pre><code class="language-php">/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+*/
+
+$kernel = $app-&gt;make(Illuminate\Contracts\Http\Kernel::class);
+
+$response = $kernel-&gt;handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+$response-&gt;send();
+
+$kernel-&gt;terminate($request, $response);</code></pre>
+<p>Cụ thể:</p>
+<p><strong>Tạo instance nhân HTTP Kernel</strong></p>
+<pre><code class="language-php">$kernel = $app-&gt;make(Illuminate\Contracts\Http\Kernel::class);</code></pre>
+<p><strong>Lấy thông tin về request</strong></p>
+<pre><code class="language-php">$request = Illuminate\Http\Request::capture()</code></pre>
+<p><strong>Xử lý request thành response</strong></p>
+<pre><code class="language-php">$response = $kernel-&gt;handle(
+    $request = Illuminate\Http\Request::capture()
+);</code></pre>
+<p>Đi sâu hơn hàm <code>handle</code> này làm gì?</p>
+<pre><code class="language-php">// File: vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+
+/**
+ * Handle an incoming HTTP request.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
+
+$response = $this-&gt;sendRequestThroughRouter($request);
+
+// Xử lý exception
+// Xử lý event
+
+return $response;</code></pre>
+<p>Hàm <code>sendRequestThroughRouter</code></p>
+<pre><code class="language-php">/**
+ * Send the given request through the middleware / router.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
+protected function sendRequestThroughRouter($request)
+{
+    $this-&gt;app-&gt;instance('request', $request); // Tạo instance request
+
+    Facade::clearResolvedInstance('request');
+
+    $this-&gt;bootstrap(); // Chạy bootstrappers đã định nghĩa
+
+    return (new Pipeline($this-&gt;app))
+              -&gt;send($request)
+              -&gt;through($this-&gt;app-&gt;shouldSkipMiddleware() ? [] : $this-&gt;middleware) // Chạy các middleware được chỉ định
+              -&gt;then($this-&gt;dispatchToRouter()); // Chuyển tiếp đến Router
+}</code></pre>
+<p>Sau khi thực hiện toàn bộ các xử lý qua bootstrappers và middlewares, request sẽ được chuyển tới Router. Ở đây Router sẽ chuyển tiếp xử lý đến khối MVC mà chúng ta sẽ chủ yếu sẽ coding sau này.</p>
+<p><strong>Gửi trả response</strong></p>
+<pre><code class="language-php">$response-&gt;send();</code></pre>
+<p>Response trả về sẽ là một gói tin HTTP response và sau đó sẽ được web browser (Apache, Nginx) trả lại cho client.</p>
+<p><strong>Xử lý kết thúc</strong></p>
+<pre><code class="language-php">$kernel-&gt;terminate($request, $response);</code></pre>
+<p>Đây là thao tác xử lý sau khi response đã được gửi đi, có thể liên quan tới việc ghi log, quản lý bộ nhớ, xóa các thông tin ghi tạm, cache, ...</p>
+<h2>Tổng kết</h2>
+<p>Việc hiểu về vòng đời của một request có thể giúp ta hiểu hơn về cấu trúc của một ứng dụng web viết bằng Laravel.</p>
+<p>Ngoài ra việc quan trọng hơn là giúp chúng ta phân biệt được những điểm, vị trí code mà chúng ta có thể can thiệp để thêm xử lý, cũng như đặt những điểm debug hợp lý.</p>
+<p>Vậy ngoài cấu trúc sẵn có của Laravel, chúng ta có thể can thiệp vào những điểm nảo?</p>
+<h5>1. Bootstrappers</h5>
+<p>Có hai bootstrappers cần quan tâm:</p>
+<pre><code class="language-php">\Illuminate\Foundation\Bootstrap\RegisterProviders::class,
+\Illuminate\Foundation\Bootstrap\BootProviders::class,</code></pre>
+<p>Hai bootstrapper này sẽ đăng ký và khởi tạo những logic mà chúng ta đã đăng ký trong file <code>config/app.php</code>. Official Docs của Laravel cũng nhấn mạnh rằng chúng ta cần tập trung vào việc sử dụng <code>ServiceProvider</code>. Trong thực tế, chúng ta cũng sẽ đăng ký toàn bộ các service xử lý logic trong các file ServiceProvider nằm trong thư mục <code>app/Providers</code></p>
+<p>Chúng ta sẽ tìm hiểu sâu hơn về ServiceProvider ở một bài viết khác.</p>
+<h5>2. Middlewares</h5>
+<p>Chúng ta hoàn toàn có thể tạo ra các middleware để xử lý request và đăng ký trong file <code>app/Htt/Kernel.php</code></p>
+<h5>3. Router</h5>
+<p>Đây là vị trí mà chúng ta sẽ chỉ định xử lý request bằng <code>Controller</code> nào.</p>
+<h5>4. Khối MVC</h5>
+<p>Đây là khối <code>Controller-Model-View</code> mà chúng ta đã rất quen thuộc. Toàn bộ xử lý cụ thể, chi tiết cho 1 request sẽ được viết trong khối này.</p>        </div>
+    </div>
+</section>
+        </main>
+
+        <script src="/assets/build/js/main.js?id=5dd822863934b75738db"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center">
+                <li class="md:mr-2">
+                    &copy; <a href="https://www.dimage.co.jp/vn/" title="Dimage Share Vietnam Website">Dimage Share Vietnam Co.,Ltd</a> 2019.
+                </li>
+
+                <li>
+                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
+                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
